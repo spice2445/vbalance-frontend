@@ -1,0 +1,80 @@
+
+.content {
+    margin-top: 66px;
+}
+
+.vabalance_section { 
+    // position: relative;
+    // overflow: hidden;
+    // width: 100%;
+    // height: 100vh;
+
+    
+    position: relative;
+
+    // height: 100vh;
+    overflow: hidden;
+}
+
+// .title_video {
+//     // position: absolute;
+//     // left: 50%;
+//     // top: 50%;
+//     // z-index: -1;
+//     // width: auto;
+//     // height: auto;
+//     // min-width: 100%;
+//     // min-height: 100%;
+//     // transform: translate(-50%, -50%);
+
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
+
+.title {
+    margin-top: 36px;
+
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // z-index: 1;
+    // font-size: 2em;
+    // text-align: center;
+
+    // // color: white;
+    // transform: translate(-50%, -50%);
+
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // text-align: center;
+    // text-transform: uppercase;
+    // mix-blend-mode: multiply;
+    // background: rgba(0, 0, 0, 0.95); 
+    // color: #fff;
+    
+    font-size: 13em;
+}
+
+.center_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.description_content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.description_columns {
+    display: flex;
+    align-items: center;
+    gap:22px;
+}

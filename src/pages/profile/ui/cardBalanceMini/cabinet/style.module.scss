@@ -1,0 +1,23 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 37px;
+  width: 100%;
+  gap: 16px;
+
+  @include adaptiv(tablet) {
+    margin-top: 27px;
+  }
+
+  @include adaptiv(mobile) {
+    margin-top: 17px;
+  }
+}
+
+.group_cabinet {
+  max-width: 200px;
+
+  @extend .groups;
+}

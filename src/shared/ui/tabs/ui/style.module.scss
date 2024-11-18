@@ -1,0 +1,64 @@
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  width: 100%;
+  gap: 24px;
+
+  @media(max-width: 500px) {
+    margin-top: 12px;
+    gap: 12px;
+  }
+}
+
+.tabsControllers {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+
+  @media (max-width: 400px) {
+    gap: 14px;
+  }
+}
+
+.tabsContents {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 24px;
+}
+
+.tabContent {
+  width: 100%;
+  height: 100%;
+}
+
+.tab_button {
+  @media (max-width: 790px) {
+    max-width: 32px;
+  }
+}
+
+.tab_button_active {
+  @media (max-width: 790px) {
+    width: 100%;
+  }
+}
+
+.action_right {
+  margin-left: auto;
+}
+
+.tab_lineage {
+  padding-right: 0;
+  padding-left: 0;
+
+  & > div > .tabsContainer > .tabsControllers,
+  & > div > .tabsContainer > .tabsContents .tabContent > div > h3 {
+    padding-right: 26px;
+    padding-left: 26px;
+  }
+}

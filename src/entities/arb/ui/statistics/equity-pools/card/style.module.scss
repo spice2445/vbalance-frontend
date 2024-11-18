@@ -1,0 +1,40 @@
+
+.card {
+  width: 100%;
+  height: 293px;
+  max-width: 376px;
+  gap: 12px;
+}
+
+.card_active {
+  border: 1px solid var(--acsent-color);
+}
+
+.card_content {
+  gap: 12px;
+}
+
+.info_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conatiner_columns_loading {
+  gap:2px;
+}
+
+.info_column_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.needParticipate_loading {
+  width: 70px;
+}
+
+.info_column_loading {
+  width: 50px;
+}

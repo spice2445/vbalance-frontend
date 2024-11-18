@@ -1,0 +1,100 @@
+@font-face {
+  src:
+    url("./fonts/Tektur-Bold.woff2") format("woff2"),
+    url("./fonts/Tektur-Bold.woff") format("woff");
+  font-family: "Tektur";
+}
+
+@font-face {
+  src:
+    url("./fonts/Lato-Regular.woff2") format("woff2"),
+    url("./fonts/Lato-Regular.woff") format("woff");
+  font-family: "Lato Regular";
+}
+
+@font-face {
+  src:
+    url("./fonts/Lato-Bold.woff2") format("woff2"),
+    url("./fonts/Lato-Bold.woff") format("woff");
+  font-family: "Lato Bold";
+}
+
+@font-face {
+  src: url("./fonts/Montserrat-Regular.ttf") format("ttf");
+  font-family: "Montserrat Regular";
+}
+
+@font-face {
+  src: url("./fonts/Montserrat-SemiBold.ttf") format("ttf");
+  font-family: "Montserrat SemiBold";
+}
+
+:root {
+  --font-family-main: "Tektur", sans-serif;
+  --font-family-additional: "Lato Regular", sans-serif;
+  --font-family-additional-bold: "Lato Bold", sans-serif;
+
+  --font-family-landing-regular: "Montserrat Regular", sans-serif;
+  --font-family-landing-bold: "Montserrat SemiBold", sans-serif;
+
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  --font-line-main: 155%;
+
+  --font-size-main-xl: 32px;
+  --font-size-main-l: 24px;
+  --font-size-main-m: 18px;
+  --font-size-main-s: 14px;
+  --font-size-main-xs: 12px;
+
+  --font-size-additional-s: 14px;
+  --font-size-additional-xs: 12px;
+  --font-size-additional-2xs: 10px;
+
+  // border-radiuses:
+  --br-primary: 10px;
+  --br-big: 20px;
+  --br-mini-button: 5px;
+
+  // animations:
+  --animation-default: all 300ms ease-out;
+
+  // icons
+  --primary-icon-sizes: 12px;
+  --primary-icon-sizes-animation: calc(var(--primary-icon-sizes) + 2px);
+
+  // colors
+  --white-color: #fafafa;
+  
+  --main-shadow-color: rgba(72, 134, 144, 0.1);
+  --additional-shadow-color: rgba(72, 134, 144, 0.05);
+
+  --element-shadow: 0 16px 24px 0 var(--main-shadow-color), 0 8px 8px 0 var(--additional-shadow-color);
+  --element-additional-shadow: 0 8px 8px 0 var(--main-shadow-color), 0 16px 24px 0 var(--additional-shadow-color);
+
+  --sidebar-box-shadow: var(--element-shadow);
+
+  --overlay-bg: rgba(0 0 0 / 60%);
+  --overlay-zIndex: 10;
+  --sidebar-width: 88px;
+  --toastify-toast-bd-radius: 20px;
+  --sidebar-z-index: 10;
+  --avatar-z-index: 1;
+
+  @include adaptiv(tablet) {
+    --font-size-main-xl: 24px;
+    --font-size-main-l: 18px;
+    --font-size-main-m: 14px;
+    --font-size-main-s: 12px;
+    --font-size-main-xs: 10px;
+  }
+
+  @include adaptiv(mobile) {
+    --font-size-main-xl: 18px;
+    --font-size-main-l: 14px;
+    --font-size-main-m: 12px;
+    --font-size-main-s: 10px;
+    --font-size-main-xs: 8px;
+  }
+}

@@ -1,0 +1,21 @@
+.card_padding {
+    padding: 37px 32px;
+    height: 100%;
+}
+
+.current_price {
+    margin-top: 16px;
+}
+
+.composition_index_title {
+    margin-top: 24px;
+}
+
+.composition_index {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 24px;
+    width: 100%;
+    gap: 19px 24px;
+}

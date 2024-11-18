@@ -1,0 +1,90 @@
+.lineage_container {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
+}
+
+.lineage_index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--acsent-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+}
+
+$slide-size: 240px;
+
+.slider {
+  overflow: hidden;
+  margin-top: 23px;
+  width: 100%;
+}
+
+.slider__container {
+  display: flex;
+  height: 254px;
+  backface-visibility: hidden;
+  touch-action: pan-y;
+  gap: 24px;
+}
+
+.active_element {
+  border: solid 1px var(--acsent-color);
+}
+
+.slider__element {
+  flex: 0 0 $slide-size;
+  padding: 24px 0;
+  height: 100%;
+  min-width: 0;
+  cursor: pointer;
+}
+
+// CARD
+.user_avatar {
+  border: 1px solid var(--acsent-color);
+  border-radius: 20px;
+  width: 64px;
+  height: 64px;
+}
+
+.name,
+.status {
+  margin-top: 21px;
+}
+
+.name_skeleton,
+.status_skeleton {
+  width: 70%;
+
+  @extend .name;
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  gap: 2px;
+}
+
+.statistic_skeleton {
+  width: 40px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  gap: 30px;
+}
+
+.checkbox_test {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

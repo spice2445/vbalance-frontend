@@ -1,0 +1,1 @@
+export { coursesBanner } from './courses';

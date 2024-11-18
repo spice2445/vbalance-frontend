@@ -1,0 +1,85 @@
+
+.card {
+  justify-content: flex-start;
+}
+
+.count_shares {
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.count_shares_loading {
+  width: 100%;
+}
+
+.deposit {
+  margin-top: 4px;
+  width: 100%;
+}
+
+.deposit_loading {
+  width: 100%;
+}
+
+.deposit_inUsdt {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  width: 100%;
+  white-space: nowrap;
+  gap: 24px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+.deposit_inUsdt_loading {
+  width: 70px;
+}
+
+.token_rate {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  gap: 8px;
+}
+
+.token_rate_loading {
+  width: 50px;
+}
+
+.input_vbt {
+  margin-top: 27px;
+  width: 100%;
+  max-width: 250px;
+
+  @media (max-width: 600px) {
+    max-width: none;
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: 32px;
+  margin-top: 16px;
+  gap: 16px 24px;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}

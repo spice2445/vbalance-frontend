@@ -1,0 +1,31 @@
+
+.card_padding {
+    padding: 3px;
+}
+
+.card_content {
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit;
+    gap:20px;
+}
+
+.course_video {
+    border-radius: inherit;
+    width: 100%;
+    height: 218px;
+}
+
+.card_description {
+    display: flex;
+    flex-direction: column;
+    padding: 0 29px;
+    padding-bottom: 29px;
+    gap:14px;
+}
+
+.description_date {
+    display: flex;
+    justify-content: space-between;
+    gap:5px;
+}

@@ -1,0 +1,395 @@
+############################################################
+############################################################
+################## Set general stages ######################
+############################################################
+############################################################
+
+stages:
+  - test_npm
+  - build_npm
+  - build_docker
+  - deploy
+
+############################################################
+############################################################
+##################### Set variables ########################
+############################################################
+############################################################
+
+variables:
+  DOCKERFILE_FRONTEND: .cicd/docker/Dockerfile-frontend
+  DOCKERFILE_STORYBOOK: .cicd/docker/Dockerfile-storybook
+  BASE_DOCKER_IMAGE: docker:20.10.10
+  NODE_DOCKER_IMAGE: node:18.17.0-alpine
+  DOCKER_COMPOSE_FRONTEND: .cicd/docker/docker-compose-frontend.yaml
+  DOCKER_COMPOSE_STORYBOOK: .cicd/docker/docker-compose-storybook.yaml
+  CONTAINER_NAME: $CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
+
+############################################################
+############################################################
+######################## TESTING ###########################
+############################################################
+############################################################
+
+.test_apps_template: &test_apps_template
+  image: $NODE_DOCKER_IMAGE
+  interruptible: true
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - node_modules/
+      - .npm/
+  before_script:
+    - npm config set cache .npm
+    - cp $APP_PROPERTIES .env   
+    - npm install  
+
+  when: on_success #! only for debug. need to be deleted
+
+############################################################
+####################### TEST DEV ###########################
+############################################################
+
+linting-typescript:dev:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: dev
+  script:
+    - npm run lint:ts
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+linting-css:dev:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: dev
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - .npm/
+    policy: pull
+  script:
+    - npm run lint:scss
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+  needs:
+    - linting-typescript:dev
+
+unit-tests:dev:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: dev
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - .npm/
+    policy: pull
+  script:
+    - npm run unit
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+  needs: 
+    - linting-css:dev
+
+############################################################
+###################### TEST PORD ###########################
+############################################################
+
+linting-typescript:prod:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: prod
+  script:
+    - npm run lint:ts
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+
+linting-css:prod:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: prod
+  script:
+    - npm run lint:scss
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - .npm/
+    policy: pull
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+  needs:
+    - linting-typescript:prod
+
+unit-tests:prod:
+  <<: *test_apps_template
+  stage: test_npm
+  environment:
+    name: prod
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - .npm/
+    policy: pull
+  script:
+    - npm run unit
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+  needs: 
+    - linting-css:prod
+
+############################################################
+############################################################
+####################### BUILD NPM ##########################
+############################################################
+############################################################
+
+.build_apps_template: &build_npm_template
+  image: $NODE_DOCKER_IMAGE
+  interruptible: true
+  cache:
+    key: ${CI_COMMIT_REF_NAME}-npm
+    paths:
+      - .npm/
+    policy: pull
+  before_script:
+    - cp $APP_PROPERTIES .env  
+    - npm config set cache .npm    
+  script:
+    - npm install
+    - npm run build:prod
+    - npm run storybook:build
+  artifacts:
+    paths:
+      - build/
+      - storybook-static/
+
+############################################################
+##################### BUILD NPM DEV ########################
+############################################################
+
+build-npm:dev:
+  <<: *build_npm_template
+  stage: build_npm
+  environment:
+    name: dev
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+  needs: ["linting-typescript:dev", "linting-css:dev", "unit-tests:dev"]
+  when: on_success
+
+
+############################################################
+##################### BUILD NPM PROD #######################
+############################################################
+
+build-npm:prod:
+  <<: *build_npm_template
+  stage: build_npm
+  environment:
+    name: prod
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+  needs: ["linting-typescript:prod", "linting-css:prod", "unit-tests:prod"]
+  when: on_success
+
+
+############################################################
+############################################################
+###################### BUILD DOCKER ########################
+############################################################
+############################################################
+
+.build_docker_app_template: &build_docker_job
+  stage: build_docker
+  interruptible: true
+  image: $BASE_DOCKER_IMAGE
+  before_script:
+    - apk add --no-cache aws-cli
+    - aws --version
+    - export CONTAINER_REGISTRY_AWS=$CONTAINER_REGISTRY_AWS
+    - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $CONTAINER_REGISTRY_AWS
+  script:
+    - >
+      docker build
+      --file $DOCKERFILE
+      --tag $IMAGE:latest
+      --tag $IMAGE:$CI_COMMIT_SHORT_SHA
+      .
+    - docker push $IMAGE:latest
+    - docker push $IMAGE:$CI_COMMIT_SHORT_SHA
+
+############################################################
+#################### BUILD DOCKER DEV ######################
+############################################################
+
+build-frontend:dev:
+  <<: *build_docker_job
+  environment:
+    name: dev
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-dev-frontend
+    DOCKERFILE: $DOCKERFILE_FRONTEND
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+  needs: ["build-npm:dev"]
+  when: on_success
+  
+build-storybook:dev:
+  <<: *build_docker_job
+  environment:
+    name: dev
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-dev-storybook
+    DOCKERFILE: $DOCKERFILE_STORYBOOK
+  tags:
+    - dev-docker-runner-1
+  only:
+    - develop
+  needs: ["build-npm:dev", "build-frontend:dev"]
+  when: on_success
+
+############################################################
+#################### BUILD DOCKER PROD #####################
+############################################################
+
+build-frontend:prod:
+  <<: *build_docker_job
+  environment:
+    name: prod
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-prod-frontend
+    DOCKERFILE: $DOCKERFILE_FRONTEND
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+  needs: ["build-npm:prod"]
+  when: on_success
+  
+build-storybook:prod:
+  <<: *build_docker_job
+  environment:
+    name: prod
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-prod-storybook
+    DOCKERFILE: $DOCKERFILE_STORYBOOK
+  tags:
+    - prod-docker-runner-1
+  only:
+    - main
+  needs: ["build-npm:prod", "build-frontend:prod"]
+  when: on_success
+
+############################################################
+############################################################
+###################### DEPLOY APP ##########################
+############################################################
+############################################################
+
+.deploy-app_template: &deploy_compose
+  stage: deploy
+  before_script:
+    - export CONTAINER_REGISTRY_AWS=$CONTAINER_REGISTRY_AWS
+    - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $CONTAINER_REGISTRY_AWS
+    - cp $DOCKER_COMPOSE_APP $PATH_PROJECT/docker-compose.yml
+
+  script:
+    - cd $PATH_PROJECT
+    - docker pull $IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker compose -f docker-compose.yml up -d --force-recreate app
+
+############################################################
+#################### DEPLOY APP DEV ########################
+############################################################
+
+deploy-frontend:dev:
+  <<: *deploy_compose
+  needs: ["build-frontend:dev"]
+  environment:
+    name: dev
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-dev-frontend
+    PATH_PROJECT: /home/gitlab-runner/services/vbalance-frontend
+    DOCKER_COMPOSE_APP: $DOCKER_COMPOSE_FRONTEND
+  only:
+    - develop
+  tags:
+    - dev-shell-runner-services
+  when: on_success
+
+deploy-storybook:dev:
+  <<: *deploy_compose
+  needs: ["build-storybook:dev"]
+  environment:
+    name: dev
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-dev-storybook
+    PATH_PROJECT: /home/gitlab-runner/services/vbalance-storybook
+    DOCKER_COMPOSE_APP: $DOCKER_COMPOSE_STORYBOOK
+  only:
+    - develop
+  tags:
+    - dev-shell-runner-services
+  when: on_success
+
+############################################################
+#################### DEPLOY APP PROD #######################
+############################################################
+
+deploy-frontend:prod:
+  <<: *deploy_compose
+  needs: ["build-frontend:prod"]
+  environment:
+    name: prod
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-prod-frontend
+    PATH_PROJECT: /home/gitlab-runner/services/vbalance-frontend
+    DOCKER_COMPOSE_APP: $DOCKER_COMPOSE_FRONTEND
+  only:
+    - main
+  tags:
+    - prod-shell-runner-services
+  when: manual
+
+deploy-storybook:prod:
+  <<: *deploy_compose
+  needs: ["build-storybook:prod"]
+  environment:
+    name: prod
+  variables:
+    IMAGE: $CONTAINER_REGISTRY_AWS/vbalance-prod-storybook
+    PATH_PROJECT: /home/gitlab-runner/services/vbalance-storybook
+    DOCKER_COMPOSE_APP: $DOCKER_COMPOSE_FRONTEND
+  only:
+    - main
+  tags:
+    - prod-shell-runner-services
+  when: manual

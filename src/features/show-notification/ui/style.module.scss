@@ -1,0 +1,18 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: solid 1px var(--block-stoke-color);
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  background: var(--block-fill-color);
+  cursor: pointer;
+}
+
+.icon {
+  & circle {
+    fill: var(--negative-color);
+  }
+}

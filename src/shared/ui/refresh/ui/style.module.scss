@@ -1,0 +1,28 @@
+.btn {
+    outline: none;
+  
+    &:focus {
+      border: solid 1px var(--acsent-color);
+      background: var(--block-fill-color);
+    }
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.pending {
+  animation: spin 1s linear infinite;
+}
+
+.pending_btn {
+  & svg {
+    animation: spin 1s linear infinite;
+  }
+}

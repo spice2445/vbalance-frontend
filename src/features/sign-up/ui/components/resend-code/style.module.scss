@@ -1,0 +1,17 @@
+.resend_message {
+  flex-grow: 0;
+  padding: 0;
+  gap:2px;
+
+  @media (max-width: 450px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.resend_message_sekundomer {
+  cursor: pointer;
+  gap:8px;
+
+  @extend .resend_message;
+}

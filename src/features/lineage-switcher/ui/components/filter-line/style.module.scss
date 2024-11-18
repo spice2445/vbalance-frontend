@@ -1,0 +1,19 @@
+.filter {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  padding-right: 26px;
+  padding-left: 26px;
+  gap: 30px;
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+    gap: 8px;
+  }
+}
+
+.statistic_skeleton {
+  width: 50px;
+}

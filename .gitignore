@@ -1,0 +1,12 @@
+/build
+node_modules
+.idea
+package-lock.json
+/storybook-static
+/reports
+/dist
+/prebuild
+pnpm-lock.yaml
+*storybook.log
+заметки.md
+*.env

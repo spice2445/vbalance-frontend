@@ -1,0 +1,24 @@
+
+.line_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.line_first_column {
+    gap:32px;
+
+    @extend .line_column;
+}
+
+.line_second_column {
+    gap:24px;
+
+    @extend .line_column;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:35px;
+}

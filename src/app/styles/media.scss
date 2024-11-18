@@ -1,0 +1,39 @@
+$media_queries: (
+  "mobile": "only screen and (max-width: 680px)",
+  "smallMobile": "only screen and (max-width: 480px)",
+  "tablet": "only screen and (max-width: 890px)",
+  "desktop": "only screen and (max-width: 1000px)"
+);
+
+@mixin for_breakpoint($breakpoints...) {
+  $conditions: ();
+
+  @each $breakpoint in $breakpoints {
+    $condition: map-get($media_queries, $breakpoint);
+    $conditions: append($conditions, $condition, comma);
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}
+
+// breakpoints figma
+
+$media_queries_design: (
+  "mobile": "only screen and (max-width: 390px)",
+  "tablet": "only screen and (max-width: 744px)",
+);
+
+@mixin adaptiv($breakpoints...) {
+  $conditions: ();
+
+  @each $breakpoint in $breakpoints {
+    $condition: map-get($media_queries_design, $breakpoint);
+    $conditions: append($conditions, $condition, comma);
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}

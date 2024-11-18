@@ -1,0 +1,63 @@
+
+.card {
+    padding: 38px 32px;
+}
+
+.programm {
+    margin-top: 16px;
+}
+
+.mini_button {
+    max-width: 168px;
+}
+
+.tokens_balances {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    gap: 8px;
+}
+
+.open_limit {
+    margin-top: 12px;
+    gap:17px;
+
+    .open_limit_text {
+        white-space: nowrap;
+    }
+}
+
+.actions {
+    display: flex;
+    margin-top: 27px;
+    width: 100%;
+    gap:8px;
+
+    & > div:first-child {
+        display: flex;
+        width: 100%;
+        gap:16px;
+    }
+}
+
+.sub_title {
+    margin-top: 24px;
+}
+
+.statistic_body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+.statistic_column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.statistic_skeleton {
+    width: auto;
+}

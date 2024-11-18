@@ -1,0 +1,134 @@
+$xs3: 8px;
+$xs2: 10px;
+$xs: 12px;
+$s: 14px;
+$m: 16px;
+$l: 18px;
+$xl: 20px;
+$xl2: 22px;
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.light {
+  fill: var(--white-color);
+}
+
+.green {
+  fill: var(--acsent-color);
+}
+
+.green-dark {
+  fill: var(--acsent-dark-color);
+}
+
+@mixin size($s) {
+  width: $s;
+  height: $s;
+  min-width: $s;
+}
+
+.sizeXS3 {
+  @include size($xs3);
+}
+
+.sizeXS3Animation {
+  flex-basis: $xs2;
+
+  @extend .sizeXS3;
+}
+
+.sizeXS2 {
+  @include size($xs2);
+}
+
+.sizeXS2Animation {
+  flex-basis: $xs;
+
+  @extend .sizeXS2;
+}
+
+.sizeXS {
+  @include size($xs);
+}
+
+.sizeXSAnimation {
+  flex-basis: $s;
+
+  @extend .sizeXS;
+}
+
+.sizeS {
+  @include size($s);
+}
+
+.sizeSAnimation {
+  flex-basis: $m;
+
+  @extend .sizeS;
+}
+
+.sizeM {
+  @include size($m);
+}
+
+.sizeMAnimation {
+  flex-basis: $l;
+
+  @extend .sizeM;
+}
+
+.sizeL {
+  @include size($l);
+}
+
+.sizeLAnimation {
+  flex-basis: $xl;
+
+  @extend .sizeL;
+}
+
+.sizeXL {
+  @include size($xl);
+
+  flex-basis: $xl;
+}
+
+.sizeXL2 {
+  @include size($xl2);
+}
+
+.sizeXL2Animation {
+  flex-basis: $xl2;
+
+  @extend .sizeXL2;
+}
+
+button:hover,
+button:focus {
+  & .sizeXS3Animation {
+    @include size($xs2);
+  }
+
+  & .sizeXS2Animation {
+    @include size($xs);
+  }
+
+  & .sizeXSAnimation {
+    @include size($s);
+  }
+
+  & .sizeSAnimation {
+    @include size($m);
+  }
+
+  & .sizeMAnimation {
+    @include size($l);
+  }
+
+  & .sizeLAnimation {
+    @include size($xl);
+  }
+}

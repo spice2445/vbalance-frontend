@@ -1,0 +1,33 @@
+.btn[class] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: solid 1px var(--block-stoke-color);
+  border-radius: 10px;
+  padding: 8px;
+  width: 130px;
+  font-size: var(--font-size-main-s);
+  color: var(--main-color);
+  background: var(--block-fill-color);
+  cursor: pointer;
+
+  &:focus {
+    border: solid 1px var(--block-stoke-color);
+    color: var(--main-color);
+    background: var(--block-fill-color);
+  }
+
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.mini[class] {
+  width: 56px;
+  height: 56px;
+
+  &:focus {
+    background: var(--block-fill-color);
+  }
+}

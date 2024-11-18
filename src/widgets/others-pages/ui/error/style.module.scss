@@ -1,0 +1,12 @@
+.title[class] {
+  font-size: 100px;
+  line-height: normal;
+
+  @include adaptiv(tablet) {
+    font-size: 70px;
+  }
+
+  @include adaptiv(mobile) {
+    font-size: 50px;
+  }
+}

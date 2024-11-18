@@ -1,0 +1,256 @@
+// SVG миксины
+@mixin white-icon {
+  & > svg {
+    fill: var(--white-color);
+  }
+}
+
+@mixin acsent-icon {
+  & > svg {
+    fill: var(--acsent-color);
+  }
+}
+
+@mixin acsent-dark-icon {
+  & > svg {
+    fill: var(--acsent-dark-color);
+  }
+}
+
+// размеры
+@mixin buton-size($height:32px, $width:200px, $padding:0 10px, $br:var(--br-primary)) {
+  border-radius: $br;
+  padding: $padding;
+  width: 100%;
+  height: $height;
+  max-width: $width;
+}
+
+.default_size {
+  @include buton-size;
+}
+
+.menu_size {
+  @include buton-size(52px, 216px, 17px, var(--br-big));
+}
+
+.mini_icon_size {
+  @include buton-size(18px, 18px, 5px, var(--br-mini-button));
+}
+
+.big_icon_size {
+  @include buton-size(32px, 32px, 0, var(--br-primary));
+}
+
+// основные стили
+.buttonBase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow: hidden;
+  border: 1px solid;
+  font-family: var(--font-family-additional);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-main-xs);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--white-color);
+  cursor: pointer;
+  gap: 8px;
+
+  &,
+  & * {
+    transition: var(--animation-default);
+  }
+
+  @extend .default_size;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// используется, если нет иконки
+.btnWithoutBtn {
+  justify-content: center;
+}
+
+
+// темы
+.primary {
+  @include white-icon;
+
+  color: var(--white-color);
+  background-color: var(--acsent-color);
+
+  &:focus {
+    @include acsent-icon;
+
+    color: var(--acsent-color);
+    background-color: var(--acsent-dark-color);
+  }
+
+  &:hover {
+    color: var(--block-stoke-color);
+  }
+}
+
+.transparent {
+  @include acsent-icon;
+
+  border-color: var(--acsent-color);
+  color: var(--acsent-dark-color);
+  background: transparent;
+
+  &:hover, &:focus {
+    color: var(--acsent-color);
+  }
+
+  &:focus {
+    border-color: var(--acsent-dark-color);
+    background: var(--acsent-dark-color);
+  }
+}
+
+.white {
+  @include acsent-icon;
+
+  border-color: transparent;
+  color: var(--acsent-color);
+  background: var(--white-color);
+
+  &:focus {
+    @include acsent-dark-icon;
+
+    color: var(--acsent-dark-color);
+    background-color: var(--acsent-color);
+  }
+
+  &:hover {
+    background-color: var(--block-stoke-color);
+  }
+}
+
+.second {
+  @include white-icon;
+
+  border-color: var(--white-color);
+  color: var(--white-color);
+  background: transparent;
+
+  &:hover,
+  &:focus {
+    @include acsent-icon;
+
+    color: var(--acsent-color);
+  }
+
+  &:focus {
+    border-color: var(--acsent-color);
+  }
+}
+
+.mini_icon {
+  @include acsent-icon;
+
+  align-items: center;
+  justify-content: center;
+  border-color: var(--acsent-color);
+  background: transparent;
+
+  &:focus {
+    @include acsent-icon;
+
+    border-color: var(--acsent-dark-color);
+    background-color: var(--acsent-dark-color);
+  }
+
+  &:hover {
+    @include acsent-dark-icon;
+  }
+
+  @extend .mini_icon_size;
+}
+
+.big_icon {
+  @include acsent-icon;
+
+  justify-content: center;
+  border-color: var(--acsent-color);
+  background: var(--white-color);
+
+  &:focus {
+    @include acsent-dark-icon;
+
+    border-color: var(--acsent-dark-color);
+  }
+
+  &:hover {
+    @include acsent-dark-icon;
+  }
+
+  @extend .big_icon_size;
+}
+
+.tab {
+  @include acsent-icon;
+
+  border-color: var(--block-stoke-color);
+  color: var(--acsent-color);
+  background-color: transparent;
+
+  &[aria-expanded="true"] {
+    border-color: var(--acsent-dark-color);
+    color: var(--acsent-dark-color);
+  }
+}
+
+.menu {
+  @include acsent-icon;
+
+  border-color: transparent;
+  font-weight: var(--font-weight-regular);
+  color: var(--acsent-dark-color);
+  background-color: var(--block-stoke-color);
+
+  &:focus {
+    @include acsent-dark-icon;
+
+    border-color: var(--acsent-dark-color);
+    color: var(--acsent-dark-color);
+  }
+
+  &:hover {
+    color: var(--acsent-color);
+  }
+
+  @extend .menu_size;
+}
+
+.select {
+  @include acsent-dark-icon;
+
+  border-color: var(--acsent-color);
+  color: var(--acsent-dark-color);
+  background: transparent;
+
+  & > svg {
+    transform: rotate(90deg);
+  }
+
+  &:hover {
+    @include acsent-icon;
+
+    color: var(--acsent-color);
+  }
+
+  &[aria-expanded="true"] {
+    background-color: var(--block-fill-color);
+
+    & > svg {
+      transform: rotate(270deg);
+    }
+  }
+}

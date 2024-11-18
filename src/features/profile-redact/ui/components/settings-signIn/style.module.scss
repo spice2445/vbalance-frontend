@@ -1,0 +1,54 @@
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap:10px;
+}
+
+.header_text {
+    gap:4px;
+}
+
+.email_block {
+    position: relative;
+    width: 100%;
+}
+
+.email_valid {
+    position: absolute;
+
+    // transform: rotateY(-50%);
+    right: 24px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.telegram_account {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.telegram_texts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.telegram_avatar {
+    border-radius: var(--br-primary);
+    width: 100%;
+    height: 48px;
+    max-width: 48px;
+
+    & img {
+        border-radius: inherit;
+    }
+}
+
+.password_block {
+    opacity: 0.4;
+}

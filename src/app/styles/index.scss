@@ -1,0 +1,121 @@
+@import "reset";
+@import "variables";
+@import "themes/normal";
+@import "themes/dark";
+@import "toast";
+
+.app {
+  min-height: 100vh;
+  color: var(--main-color);
+  background: var(--theme-bg);
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  padding: 8px 40px;
+  height: 100%;
+  max-width: 1440px;
+  gap: 32px;
+
+  @include for_breakpoint(tablet) {
+    padding: 0;
+  }
+
+  @media (max-width: 1000px) {
+    padding-bottom: 90px;
+  }
+
+  @media (max-width: 890px) {
+    padding-bottom: 110px;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  margin-left: 120px;
+  width: 100%;
+
+  @include for_breakpoint(tablet) {
+    padding: 8px 40px;
+  }
+
+  @include for_breakpoint(mobile) {
+    padding: 16px;
+  }
+
+  @include for_breakpoint(desktop) {
+    margin-left: 0;
+  }
+}
+
+.content-page {
+  display: flex;
+  width: 100%;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.page__loader {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+* {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-main-s);
+  line-height: var(--font-line-main);
+  color: var(--main-color);
+
+  &::-webkit-scrollbar {
+    background-color: var(--block-stoke-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: var(--acsent-color);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--acsent-dark-color);
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    height: 100%;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: var(--block-stoke-color);
+  }
+}
+
+.shadow_x {
+  mask-image: linear-gradient(90deg, rgba(255, 0, 0, 0) 0%, #fafafa 2.6%, #fafafa 91.5%, rgba(209, 56, 247, 0) 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.shadow_y {
+  mask-image: linear-gradient(0deg, rgba(217, 217, 217, 0) 0%, #737373 14.5%, #737373 87%, rgba(115, 115, 115, 0) 100%);
+}

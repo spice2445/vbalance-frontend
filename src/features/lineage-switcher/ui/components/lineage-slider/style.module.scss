@@ -1,0 +1,46 @@
+.lineage_container {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
+}
+
+.lineage_index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--acsent-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+}
+
+.checkbox_test {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.slider {
+  overflow: hidden;
+  margin-top: 23px;
+  width: 100%;
+}
+
+.slider__container {
+  display: flex;
+  height: 254px;
+  backface-visibility: hidden;
+  touch-action: pan-y;
+  gap: 24px;
+
+  & * {
+    user-select: none;
+  }
+}
+
+.title_loading {
+  margin-left: 26px;
+}

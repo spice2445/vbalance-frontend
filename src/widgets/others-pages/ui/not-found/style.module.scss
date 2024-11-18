@@ -1,0 +1,59 @@
+.title[class] {
+  font-size: 60px;
+
+  @include adaptiv(tablet) {
+    font-size: 50px;
+  }
+
+  @include adaptiv(mobile) {
+    font-size: 40px;
+  }
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include adaptiv(tablet) {
+    gap: 9px;
+  }
+
+  @include adaptiv(mobile) {
+    gap: 6px;
+  }
+}
+
+.logo {
+  width: 170px;
+  height: 170px;
+
+  @include adaptiv(tablet) {
+    width: 140px;
+    height: 140px;
+  }
+
+  @include adaptiv(mobile) {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+// .subtitle[class] {
+//   margin-top: 40px;
+//   font-size: 32px;
+//   line-height: 40px;
+//   text-align: center;
+//   text-transform: uppercase;
+
+//   @include adaptiv(tablet) {
+//     margin-top: 25px;
+//     font-size: 28px;
+//   }
+
+//   @include adaptiv(mobile) {
+//     margin-top: 15px;
+//     font-size: 23px;
+//   }
+// }
+

@@ -1,0 +1,42 @@
+.card_container {
+  justify-content: start;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  max-width: 386px;
+
+  @media (max-width: 883px) {
+    max-width: 100%;
+  }
+}
+
+.preview {
+  border-radius: inherit;
+  padding: 3px 3px 0;
+  width: 100%;
+  height: 100%;
+  max-height: 190px;
+
+  @media (max-width: 883px) {
+    max-height: none;
+  }
+}
+
+.preview_loading {
+  border-radius: 17px;
+  height: 190px;
+}
+
+.content {
+  margin-top: 30px;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.content_text {
+  margin-top: 4px;
+}
+
+.cross_over {
+  margin-top: 20px;
+}

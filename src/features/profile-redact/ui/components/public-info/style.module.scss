@@ -1,0 +1,25 @@
+
+.avatar_block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    border: 1px solid var(--block-stoke-color);
+    border-radius: var(--br-big);
+    height: 64px;
+    min-width: 64px;
+}
+
+.input {
+    padding: 0 24px;
+}
+
+.block_gender {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    white-space: nowrap;
+    gap: 8px 16px;
+}

@@ -1,0 +1,155 @@
+$br: var(--br-primary);
+
+@mixin border {
+  border: 1px solid var(--block-stoke-color);
+}
+
+@mixin border-cell {
+  @include border;
+
+  border-top: 0;
+}
+
+@mixin fixed_cell {
+  position: sticky;
+  left: 0;
+}
+
+.container {
+  overflow-x: auto;
+  width: min(100%, 1224px);
+}
+
+.table {
+  @include border;
+
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: $br;
+  width: 100%;
+  min-width: 1222px;
+  box-sizing: content-box;
+}
+
+.grid_layout {
+  position: sticky;
+  top: 0;
+  display: grid;
+  align-items: center;
+}
+
+.head {
+  z-index: 1;
+  border-radius: $br;
+  width: 100%;
+  height: 40px;
+  white-space: nowrap;
+
+  @extend .grid_layout;
+}
+
+.cell {
+  @include border-cell;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--block-fill-color);
+}
+
+.cell_head {
+  border-top: 1px solid var(--block-stoke-color);
+  gap: 4px;
+
+  &[aria-details="left"],
+  &:first-child {
+    justify-content: start;
+    padding-left: 24px;
+  }
+
+  &[aria-details="right"],
+  &:last-child {
+    justify-content: end;
+
+    // border-right: 0;
+    padding-right: 24px;
+  }
+
+  &:last-child {
+    border-radius: 0 10px 0 0;
+  }
+
+  &:nth-child(1) {
+    border-radius: 10px 0 0;
+  }
+
+  &[aria-details="center"] {
+    justify-content: center;
+  }
+
+  @extend .cell;
+}
+
+.filterable {
+  cursor: pointer;
+}
+
+//////// CONTENT
+.content {
+  z-index: 0;
+  justify-content: start;
+  border-radius: $br;
+  width: 100%;
+  height: 520px;
+
+  @extend .grid_layout;
+}
+
+.cell_content {
+  @include border-cell;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--block-fill-color);
+
+  &[aria-details="left"] {
+    justify-content: left;
+    padding-left: 20px;
+  }
+
+  &[aria-details="right"] {
+    justify-content: right;
+    border-right: 0;
+    padding-right: 20px;
+  }
+}
+
+.fixed_cell {
+  @include fixed_cell;
+}
+
+.skeleton {
+  height: 20px;
+  background-color: var(--wrapper-skeleton);
+}
+
+.reachedEnd {
+  position: relative;
+  top: -20px;
+}
+
+.not_data {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(-50%, -50%);
+}

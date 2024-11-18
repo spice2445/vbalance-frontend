@@ -1,0 +1,81 @@
+
+.card {
+    padding: 0 0 40px;
+}
+
+.video {
+    border-radius: var(--br-big) var(--br-big) 0 0;
+    width: 100%;
+    height: 460px;
+
+    // background-color: var(--acsent-color);
+}
+
+.info_lesson {
+    margin-top: 43px;
+    padding: 0 32px;
+    height: 100%;
+}
+
+.name_lesson {
+    margin-top: 4px;
+}
+
+.description_lesson {
+    margin-top: 13px;
+    white-space: pre-line;
+}
+
+.additional_materials_container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.additional_materials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    border: 1px solid var(--acsent-color);
+    border-radius: var(--br-big);
+    padding: 14px 20px 14px 32px;
+    width: 100%;
+    height: 72px;
+    max-width: 360px;
+    background: var(--main-color-inverted);
+    box-shadow: var(--element-additional-shadow);
+
+    .text_content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .download_link {
+        background-color: var(--acsent-color);
+
+        & > svg {
+            fill: var(--white-color);
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    gap: 25px;    
+}
+
+.current_lesson[class] {
+    font-size: 40px;
+    gap:13px;
+}
+
+.footer_controls {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+}

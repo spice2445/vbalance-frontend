@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  width: 100%;
+
+  @include for_breakpoint(tablet) {
+    justify-content: flex-end;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include for_breakpoint(tablet) {
+    justify-content: space-between;
+  }
+}
+
+.open {
+  @include for_breakpoint(smallMobile) {
+    gap: 12px;
+  }
+}
+
+.active svg {
+  rotate: 180deg;
+}
+
+.button {
+  border: 1px solid var(--block-stoke-color);
+  border-radius: 10px;
+  height: 32px;
+  min-width: 32px;
+  background: var(--block-fill-color);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--block-stoke-color);
+    background: var(--block-fill-color);
+  }
+}

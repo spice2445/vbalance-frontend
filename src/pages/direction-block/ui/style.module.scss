@@ -1,0 +1,25 @@
+.page {
+    display: flex;
+    margin-bottom: 79px;
+    width: 100%;
+    gap:35px;
+
+    @media(max-width: 740px) {
+        margin-bottom: 0;
+    }
+}
+
+.column_lessons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 392px;
+    gap: 24px;
+}
+
+.list_lessons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 21px;
+}

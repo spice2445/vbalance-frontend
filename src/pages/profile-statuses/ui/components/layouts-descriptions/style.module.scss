@@ -1,0 +1,13 @@
+
+.description {
+  margin-top: 14px;
+}
+
+.container_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+  width: 100%;
+  gap: 32px;
+}

@@ -1,0 +1,29 @@
+.card_padding {
+    padding: 0;
+}
+
+.content {
+    margin-top: 24px;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider__container {
+    display: flex;
+    backface-visibility: hidden;
+    touch-action: pan-y pinch-zoom;
+    gap: 32px;
+
+    & > div {
+        flex: 0 0 392px;
+        min-width: 0;
+    }
+
+    & * {
+        user-select: none;
+    }
+}

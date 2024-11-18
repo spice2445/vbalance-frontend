@@ -1,0 +1,39 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 37px;
+  width: 100%;
+  gap: 16px;
+
+  @include adaptiv(tablet) {
+    margin-top: 27px;
+  }
+
+  @include adaptiv(mobile) {
+    margin-top: 17px;
+  }
+}
+
+.group_tickets {
+  max-width: 222px;
+
+  @extend .groups;
+}
+
+.tickets_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.input {
+  max-width: 170px;
+}
+
+.tickets_button {
+  width: 100%;
+  max-width: 200px;
+}

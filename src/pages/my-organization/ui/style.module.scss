@@ -1,0 +1,28 @@
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 32px;
+}
+
+.first_line {
+    @extend .line;
+}
+
+.referral_link {
+    height: 100%;
+}
+
+@media (max-width: 1250px) {
+    .first_line {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .referral_link {
+        height: initial;
+    }
+}
+
+

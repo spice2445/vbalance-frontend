@@ -1,0 +1,33 @@
+.card {
+    padding: 3px;
+
+    .card_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:32px;
+    }
+}
+
+.card_mask {
+    border-radius: 17px;
+    height: 100%;
+    max-width: 96px;
+}
+
+.card_content_padding {
+    padding: 23px 0;
+    padding-right: 32px;
+}
+
+.card_content_skeleton {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:5px;
+}
+
+.description {
+    align-items: center;
+    line-height: 155%;
+}

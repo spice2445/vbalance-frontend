@@ -1,0 +1,65 @@
+.chart_tooltip {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: solid 1px var(--block-stoke-color);
+    border-radius: 10px;
+    padding: 11px 12px 8px;
+    height: 60px;
+    min-width: 110px;
+    font-size: 14px;
+    background: var(--block-fill-color);
+    pointer-events: none;
+    box-shadow: 0 8px 8px 0 rgba(72, 134, 144, 0.05), 0 16px 24px 0 rgba(72, 134, 144, 0.10);
+    gap: 4px;
+}
+
+.chart {
+    position: relative; 
+    height: 150px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+  
+.tooltip_title {
+    font-size: var(--font-size-additional-2xs);
+    line-height: 16px;
+}
+
+.flex {
+    display: flex;
+    gap: 2px;
+}
+
+.active[class] {
+    border-color: var(--acsent-color);
+    color: var(--acsent-color);
+}
+
+.btn {
+    justify-content: center;
+    border: solid 1px var(--block-stoke-color);
+    width: auto;
+    height: 24px;
+    min-width: 70px;
+    max-width: none;
+    text-align: center;
+
+    &:focus {
+        background: transparent;
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}

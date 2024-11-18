@@ -1,0 +1,32 @@
+.methods {
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.methods_link {
+  width: 100%;
+  height: 56px;
+  max-width: 56px;
+}
+
+.methods_btn {
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--block-stoke-color);
+  width: 100%;
+  height: 100%;
+  font-weight: var(--font-weight-bold);
+  color: var(--main-color);
+  background: var(--block-fill-color);
+
+  & > svg {
+    fill: var(--acsent-color);
+  }
+}

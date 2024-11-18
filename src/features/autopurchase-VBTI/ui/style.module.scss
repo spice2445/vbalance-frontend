@@ -1,0 +1,72 @@
+
+.card {
+    padding: 38px 28px;
+    height: 100%;
+    max-width: 604px;
+}
+
+
+.default_margin {
+    margin-top: 24px;
+}
+
+.tokens_balances {
+    display: flex;
+    align-items: center;
+    margin: 22px 0;
+    gap: 16px;
+}
+
+.select_purchase {
+    margin-top: 26px;
+}
+
+.open_limit {
+    gap:17px;
+
+    .open_limit_text {
+        white-space: nowrap;
+    }
+}
+
+.increment_limit {
+    max-width: 104px;
+}
+
+.regularity {
+    gap:12px;
+}
+
+
+// !!!!
+
+.input_conatiner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 22px;
+}
+
+.input_size {
+    border: 1px solid var(--block-stoke-color);
+    padding: 0 20px;
+    height: 40px;
+    max-width: 259px;
+    background: var(--block-fill-color);
+}
+
+.vbti_in_week {
+    gap: 5px;
+}
+
+.choose_payment_title {
+    margin-top: 36px;
+}
+  
+
+.choose_payment {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 16px;
+}

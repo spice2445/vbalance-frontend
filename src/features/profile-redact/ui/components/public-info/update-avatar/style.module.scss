@@ -1,0 +1,38 @@
+
+.modal {
+    width: 100%;
+    max-width: 358px;
+}
+
+.avatars {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap:16px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+
+    .current_page {
+        font-size: 40px;
+        gap:14px;
+    }
+
+    .all_page {
+        gap:13px;
+    }
+}
+
+.footer_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap:11px;
+}

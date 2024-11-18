@@ -1,0 +1,95 @@
+
+.card {
+    padding: 3px 30px 3px 2px;
+
+    @media(max-width: 1400px) {
+        width: 100%;
+        max-width: 604px; 
+    }
+}
+
+.card_content {
+    display: flex;
+    align-items: center;
+    gap:32px;
+
+    @media(max-width: 550px) {
+        flex-direction: column;
+        gap:16px;
+    }
+}
+
+.content {
+    padding:24px 0;
+    width: 100%;
+    
+    @media(max-width: 550px) {
+        padding: 0 24px 24px;
+    }
+}
+
+.banner {
+    border-radius: 17px;
+    height: 100%;
+    max-width: 96px;
+
+    @media(max-width: 550px) {
+        width: 100%;
+        height: 96px;
+        max-width: 100%;
+    }
+}
+
+.banner_loading {
+    width: 96px;
+
+    @media(max-width: 550px) {
+        width: 100%;
+        height: 96px;
+    }
+}
+
+.description {
+    @media(max-width: 550px) {
+        margin-top: 8px;
+    }
+}
+
+.description_loading {
+    margin-top: 8px;
+}
+
+.statistic {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 440px;
+    white-space: nowrap;
+    gap:12px;
+
+    @media(max-width: 740px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+}
+
+.to_block {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    white-space: nowrap;
+    gap: 12px;
+
+    @media(max-width: 740px) {
+        margin-top: 16px;
+    }
+
+    
+    @media(max-width: 550px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

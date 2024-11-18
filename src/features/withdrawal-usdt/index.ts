@@ -1,0 +1,2 @@
+
+export {withdrawalUsdtProps} from './ui';

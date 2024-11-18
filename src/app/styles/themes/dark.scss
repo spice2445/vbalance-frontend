@@ -1,0 +1,19 @@
+.dark {
+  --theme-bg: #3f4e5c;
+  --main-color: #fafafa;
+  --main-color-inverted: #465461;
+  --acsent-color: #01ccd2;
+  --acsent-dark-color: #5eb1bf;
+  --block-stoke-color: #516375;
+  --block-fill-color: #435362;
+  --positive-color: #5fcb9d;
+  --negative-color: #fc8c8c;
+
+  --short-logo-color: #5eb1bf;
+  --logo-first-color: #fafafa;
+
+  --navbar-bg: linear-gradient(0deg, rgb(19 21 23 / 80%) 0%, rgb(76 83 90 / 0%) 100%);
+  --sidebar-overlay-bg: rgba(0 0 0 / 40%);
+  --wrapper-skeleton: var(--theme-bg);
+  --skeleton: #788a9a;
+}

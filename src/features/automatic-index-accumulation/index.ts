@@ -1,0 +1,2 @@
+
+export { AutomaticIndexAccumulation } from './ui';

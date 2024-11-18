@@ -1,0 +1,89 @@
+.first_line {
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
+}
+
+.second_line {
+  grid-template-columns: 48% repeat(2, 22%);
+  grid-template-rows: 375px;
+
+  & > div:first-child {
+    min-width: 540px;
+  }
+
+  & > div {
+    @media (max-width: 1300px) {
+      width: 100%;
+      height: auto;
+      max-width: 48%;
+
+      &:first-child {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      max-width: 100%;
+
+      &:first-child {
+        min-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // gap: 32px;
+  }
+}
+
+// VBT STAKING
+.vbt_card {
+  justify-content: flex-start;
+  padding: 26px 10px 32px;
+}
+
+.vbt_count_loading,
+.input_token,
+.actions {
+  width: 100%;
+}
+
+.vbtInUsdt_loading,
+.token_rate_loading {
+  width: 40px;
+}
+
+.vbt_title {
+  margin-top: 24px;
+}
+
+.vbt_count {
+  margin-top: 4px;
+}
+
+.token_rate {
+  margin-top: 7px;
+}
+
+.input_token {
+  margin-top: 27px;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  gap: 16px;
+}

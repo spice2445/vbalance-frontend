@@ -1,0 +1,93 @@
+
+.arb_card {
+  padding: 38px 28px;
+  height: 100%;
+  max-width: 604px;
+}
+
+.commom_count_deposits {
+  margin-top: 19px;
+}
+
+.open_limit_container {
+  display: flex;
+  margin-top: 23px;
+  gap: 15px;
+
+  .text_info {
+    white-space: nowrap;
+    gap: 5px;
+  }
+
+  .increment {
+    max-width: 104px;
+    gap: 10px;
+  }
+}
+
+.openLimit_skeleton {
+  min-width: 50px;
+}
+
+.title_create_new_deposit {
+  margin-top: 30px;
+}
+
+.create_new_deposit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 5px 10px;
+}
+
+.deposit {
+  padding: 15px 10px 20px;
+  width: 117px;
+  height: 152px;
+  cursor: pointer;
+}
+
+.monthCount {
+  margin-top: 4px;
+}
+
+.checkBoxChoosed {
+  margin-top: 8px;
+}
+
+.depositChoose {
+  border: 1px solid var(--acsent-color);
+}
+
+.input_usdt_conatiner {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  width: 100%;
+  gap: 22px;
+}
+
+.input_size {
+  border: 1px solid var(--block-stoke-color);
+  padding: 0 20px;
+  height: 40px;
+  max-width: 259px;
+  background: var(--block-fill-color);
+}
+
+.usdt_in_week {
+  gap: 5px;
+}
+
+.choose_payment_title {
+  margin-top: 36px;
+}
+
+.choose_payment {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 16px;
+}

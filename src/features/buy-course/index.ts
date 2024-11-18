@@ -1,0 +1,2 @@
+
+export { BuyCourseProps } from './ui';

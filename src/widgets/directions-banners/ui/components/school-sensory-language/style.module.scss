@@ -1,0 +1,56 @@
+
+
+.description {
+    width: 100%;
+    max-width: 478px;
+}
+
+.description2 {
+    width: 100%;
+    max-width: 523px;
+}
+
+.large_top {
+    margin-top: 20px;
+}
+
+.explanation {
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+
+.media_book {
+    right: 38px;
+    bottom:0;
+}
+
+.book_content {
+    right: 82px;
+    bottom:-1px;
+}
+
+.list {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    margin-top: 21px;
+    width: 100%;
+    max-width: 436px;
+    gap: 8px 20px;
+
+    .column {
+        gap:12px;
+    }
+}
+
+.icon {
+    width: 55px;
+    height: 64px;
+ 
+    @media (max-width: 1200px) {
+        width: 37px;
+        height: 43.055px;
+    }
+}

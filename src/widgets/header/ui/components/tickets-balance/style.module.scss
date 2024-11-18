@@ -1,0 +1,38 @@
+.skeleton_balance_tickets,
+.balance {
+  width: 92px;
+  height: 32px;
+}
+
+.balance_tickets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--block-stoke-color);
+  border-radius: 10px;
+  padding: 0 15px;
+  height: 32px;
+  font-family: var(--font-family-additional-bold);
+  font-size: var(--font-size-main-s);
+  line-height: 8px;
+  color: var(--main-color);
+  background: var(--block-fill-color);
+  cursor: pointer;
+  gap: 6px;
+
+  @include for_breakpoint(smallMobile) {
+    border: none;
+    padding: 0;
+    font-size: var(--font-size-main-xs);
+    background: transparent;
+    gap: 4px;
+  }
+
+  @media (max-width: 380px) {
+    font-size: var(--font-size-main-xs);
+
+    & > svg {
+      height: 14px;
+    }
+  }
+}

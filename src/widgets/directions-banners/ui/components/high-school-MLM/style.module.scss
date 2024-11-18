@@ -1,0 +1,42 @@
+
+
+.description {
+    width: 100%;
+    max-width: 503px;
+}
+
+.media_book {
+    right: 38px;
+    bottom:0;
+}
+
+.book_content {
+    right: 82px;
+    bottom:-1px;
+}
+
+.list {
+    display: grid;
+
+    // justify-content: space-between;
+    grid-template-columns: auto auto;
+    gap: 8px 30px;
+
+    .column {
+        gap:12px;
+    }
+}
+
+.old_price {
+  text-decoration: line-through;
+}
+
+.icon {
+    width: 55px;
+    height: 64px;
+ 
+    @media (max-width: 1200px) {
+        width: 36.667px;
+        height: 42.62px;
+    }
+}

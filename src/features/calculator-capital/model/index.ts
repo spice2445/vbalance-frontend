@@ -1,0 +1,1 @@
+export {infoCapital} from './footer-capital';

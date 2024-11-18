@@ -1,0 +1,199 @@
+// BODY
+.body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.number_container {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+
+  // width: 100%;
+  gap: 8px;
+}
+
+// phone
+.input_list {
+  display:flex;
+  width: 100%;
+  height: 56px;
+  gap: 5px;
+
+  & input {
+    outline: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--main-color);
+    background-color: var(--block-fill-color);
+
+    &:-webkit-autofill {
+      background-color: var(--block-fill-color);
+    }
+  }
+}
+
+// INPUT
+.input {
+  outline: none;
+  border: 0;
+  width: 100%;
+  background: transparent;
+
+  &, &::placeholder {
+    font-family: var(--font-family-additional);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-main-xs);
+    color: var(--main-color);
+  }
+}
+
+.disabled[class] {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  svg {
+    cursor: not-allowed;
+  }
+}
+
+// THEMES
+.primary {
+  border: 1px solid var(--acsent-dark-color);
+  border-radius: var(--br-primary);
+  padding: 7px 10px;
+  width: 100%;
+  height: 32px;
+  max-width: 170px;
+}
+
+.secondary {
+  border: 1px solid var(--block-fill-color);
+  border-radius: var(--br-primary);
+  padding: 7px 10px 7px 32px;
+  height: 32px;
+  max-width: 200px;
+}
+
+.number {
+  border: none;
+}
+
+.large, .large_password {
+  border-radius: var(--br-primary);
+  padding: 0 56px;
+  height: 56px;
+  max-width: 358px;
+  background-color: var(--block-fill-color);
+
+  &:-webkit-autofill {
+    background-color: var(--block-fill-color);
+  }
+
+  &:focus {
+    border: 1px solid var(--acsent-color);
+  }
+}
+
+.large2_body {
+  width: 100%;
+}
+
+.large-2 {
+  border: 1px solid var(--block-stoke-color);
+  border-radius: var(--br-big);
+  padding: 0 15px;
+  width: 100%;
+  height: 56px;
+  max-width: 310px;
+  background-color: var(--block-fill-color);
+}
+
+// LEFT ICON
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.primary_icon, .secondary_icon {
+  left: 10px;
+
+  @extend .icon;
+}
+
+.large_icon, .large_password_icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// RIGHT ICON
+.password_icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+// LABELS
+
+.label {
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.country_label {
+  white-space: nowrap;
+}
+
+// ALIGNs
+.align_left {
+  text-align: left;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.align_right {
+  text-align: right;
+}
+
+// Buttons
+.btnNumber {
+  &:focus {
+    background: transparent;
+  }
+}
+
+.input_buttons {
+  display: none;
+}
+
+.error[class] {
+  position: absolute;
+  left: 20px;
+  bottom: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--negative-color);
+  border-radius: 5px;
+  padding: 0 8px;
+  height: 16px;
+  font-size: 10px;
+  line-height: 15px;
+  white-space: nowrap;
+  color: var(--negative-color);
+  background-color: var(--block-fill-color);
+
+  &:-webkit-autofill {
+    background-color: var(--block-fill-color);
+  }
+}

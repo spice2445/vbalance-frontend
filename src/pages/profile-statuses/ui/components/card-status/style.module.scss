@@ -1,0 +1,169 @@
+
+.size_card {
+  width: 100%;
+  height: 352px;
+  max-width: 604px;
+
+  @media (max-width: 1440px) {
+    max-width: 100%;
+  }
+}
+
+.buyable_height {
+  height: 374px;
+}
+
+.container_content {
+  max-width: 424px;
+}
+
+.base_paddings {
+  padding: 0;
+}
+
+.paddings {
+  padding: 28px 40px 32px 32px;
+}
+
+.include_status,
+.statistic {
+  margin-top: 16px;
+}
+
+.include_status {
+  gap: 4px;
+}
+
+.statistic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 367px;
+  gap: 5px;
+
+  .statistic_column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.statistic_skeleton {
+  width: 100%;
+  max-width: 70px;
+}
+
+.procents_statuses {
+  display: grid;
+  justify-content: space-between;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  margin-top: 25px;
+  gap: 12px 5px;
+
+  .propotion_percent,
+  .propotion_percent_acsent,
+  .propotion_percent_disabled {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: 1px solid var(--acsent-color);
+    border-radius: 15px;
+    padding: 11px;
+    height: 37px;
+    max-width: 200px;
+    gap: 8px;
+
+    .full_text[class] {
+      color: #01ccd2;
+      gap: 4px;
+    }
+  }
+
+  .propotion_percent_disabled {
+    opacity: 0.5;
+  }
+
+  .propotion_percent_acsent {
+    color: var(--block-fill-color);
+    background: var(--acsent-dark-color);  
+  }
+
+  @extend .container_content;
+}
+
+.get_usdt {
+  margin-top: 20px;
+  gap: 4px;
+}
+
+.buy_status {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  gap: 24px;
+}
+
+.price {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+
+  *,
+  * > span {
+    line-height: normal;
+  }
+}
+
+.status_sideways[class],
+.status_sideways_acsent[class],
+.status_sideways_skeleton[class] {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  font-size: 40px;
+  white-space: nowrap;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  color: var(--acsent-color);
+  opacity: 0.5;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.status_sideways_acsent[class] {
+  color: #01ccd2;
+}
+
+.status_sideways_skeleton[class] {
+  width: 25px;
+  height: 90%;
+  opacity: 1;
+}
+
+.achivment_turnover {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  gap: 9px;
+}
+
+.turnover_title {
+  gap: 4px;
+}
+
+.turnover_progress,
+.turnover_progress_skeleton {
+  border: 1px solid var(--block-stoke-color);
+  border-radius: 6px;
+  padding: 1px;
+  width: 100%;
+  height: 12px;
+
+  @extend .container_content;
+}
+
+.turnover_progress_bar {
+  border-radius: inherit;
+  height: 100%;
+  background-color: var(--acsent-color);
+}

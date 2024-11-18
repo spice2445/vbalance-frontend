@@ -1,0 +1,22 @@
+.play_video {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.play_video_icon {
+  width: 40px;
+  height: 40px;
+}
+
+.introductory_modal {
+  padding: 32px;
+  width: 80%;
+  height: 80%;
+}

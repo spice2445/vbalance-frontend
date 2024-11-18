@@ -1,0 +1,31 @@
+.card_padding {
+    padding: 14px 16px 14px 33px;
+}
+
+.card_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    margin-top: 5px;
+}
+
+.text_skeleton {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.action_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.info_btn {
+    border: 1px solid var( --block-stoke-color);
+}

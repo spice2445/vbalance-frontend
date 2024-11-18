@@ -1,0 +1,21 @@
+
+.container_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  width: 100%;
+  gap: 10px;
+}
+
+.column_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.skeleton_text {
+  width: 100%;
+  min-width: 40px;
+}

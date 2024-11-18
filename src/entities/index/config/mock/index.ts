@@ -1,0 +1,1 @@
+export {DEPOSITS_INDEX_MOCK} from './deposits-index';

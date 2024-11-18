@@ -1,0 +1,37 @@
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 32px;
+}
+
+.first_line {
+  @extend .line;
+  
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+  
+.second_line {
+    display: grid;
+    grid-template-columns: repeat(2, 22%) 48%;
+    grid-template-rows: 288px;
+  
+    @extend .line;
+  
+    @media (max-width: 1300px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+  
+    @media (max-width: 540px) {
+      & > div:last-child {
+        height: auto;
+      }
+    }
+}

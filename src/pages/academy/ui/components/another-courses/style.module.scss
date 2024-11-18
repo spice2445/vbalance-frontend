@@ -1,0 +1,19 @@
+.content_cards {
+    display: grid;
+    place-content: start center;
+    grid-template-columns: repeat(auto-fill, minmax(386px, 1fr));
+    width: 100%;
+    gap:32px;
+}
+
+.card {
+    @media (max-width: 1430px) {
+        max-width: 100%;
+    }
+}
+
+.card_preview {
+    @media (max-width: 883px) {
+        max-height: 190px;
+    }
+}

@@ -1,0 +1,28 @@
+
+
+.modal {
+    padding: 42px 39px;
+    width: 100%;
+    max-width: 358px;
+}
+
+.modal_autopurchase { 
+    padding: 42px 23px;
+    padding-top: 39.5px;
+}
+
+.largeTop {
+    margin-top: 24px;
+}
+
+.averageTop {
+    margin-top: 16px;
+}
+
+.action_btn {
+    border-radius: 14px;
+    height: 42px;
+    max-width: 280px;
+
+    @extend .averageTop;
+}

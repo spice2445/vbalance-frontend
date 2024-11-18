@@ -1,0 +1,40 @@
+
+
+.card {
+    // height: 436px;
+}
+
+.description {
+    width: 100%;
+    max-width: 384px;
+}
+
+.media_book {
+    right: 38px;
+    bottom:0;
+}
+
+.book_content {
+    right: 82px;
+    bottom:-1px;
+}
+
+.list {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 12px 50px;
+
+    .column {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap:12px;
+
+        & > svg {
+            min-width: 26px;
+        }
+        
+    }
+}

@@ -1,0 +1,241 @@
+.base {
+  display: flex;
+  align-items: center;
+  white-space: pre-line;
+  gap: 8px;
+}
+
+// font-weight
+.weight_bold[class] {
+  &, &::placeholder {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.weight_regular[class] {
+  &, &::placeholder {
+    font-weight: var(--font-weight-regular);
+  }
+}
+
+// font-family
+.font_main[class] {
+  &, &::placeholder {
+    font-family: var(--font-family-main);
+
+    @extend .weight_bold;
+  }
+}
+
+.font_additional[class] {
+  &, &::placeholder{
+    font-family: var(--font-family-additional);
+
+    @extend .weight_regular;
+  }
+}
+
+.font_additional_bold[class] {
+  &, &::placeholder{
+    font-family: var(--font-family-additional-bold);
+
+    @extend .weight_bold;
+  }
+}
+
+.font_landing_regular[class] {
+  &, &::placeholder{
+    font-family: var(--font-family-landing-regular);
+
+    @extend .weight_regular;
+  }
+}
+
+.font_landing_bold[class] {
+  &, &::placeholder{
+    font-family: var(--font-family-landing-bold);
+
+    @extend .weight_bold;
+  }
+}
+
+// font-size
+.xl[class] {
+  &, &::placeholder{
+    font-size: var(--font-size-main-xl);
+  }
+}
+
+.l[class] {
+  &, &::placeholder{
+    font-size: var(--font-size-main-l);
+  }
+}
+
+.m[class] {
+  &, &::placeholder{
+    font-size: var(--font-size-main-m);
+  }
+}
+
+.s[class] {
+  &, &::placeholder{
+    font-size: var(--font-size-main-s);
+  }
+}
+
+.xs[class] {
+  &, &::placeholder{
+    font-size: var(--font-size-main-xs);
+  }
+}
+
+// colors
+.color_main[class] {
+  &, &::placeholder{
+    color: var(--main-color);
+  }
+}
+
+.color_acsent[class] {
+  &, &::placeholder{
+    color: var(--acsent-color);
+  }
+}
+
+.color_acsent_dark[class] {
+  & > svg path {
+    fill: var(--acsent-color);
+  }
+
+  &, &::placeholder{
+    color: var(--acsent-dark-color);
+  }
+}
+
+.color_positive[class] {
+  &, &::placeholder{
+    color: var(--positive-color);
+  }
+}
+
+.color_negative[class] {
+  &, &::placeholder{
+    color: var(--negative-color);
+  }
+}
+
+.color_primary_inverted[class] {
+  &, &::placeholder{
+    color: var(--block-fill-color);
+  }
+}
+
+.color_white[class] {
+  &, &::placeholder{
+    color: var(--white-color);
+  }
+}
+
+.skeleton_xs {
+  height: 19px;
+  min-width: 35px;
+  max-width: 35px;
+
+  @include adaptiv(tablet) {
+    height: 15px;
+    min-width: 30px;
+    max-width: 30px;
+  }
+
+  @include adaptiv(mobile) {
+    height: 12px;
+    min-width: 27px;
+    max-width: 27px;
+  }
+}
+
+.skeleton_s {
+  height: 22px;
+  min-width: 50px;
+
+  @include adaptiv(tablet) {
+    height: 19px;
+    max-width: 35px;
+  }
+
+  @include adaptiv(mobile) {
+    height: 15px;
+    max-width: 30px;
+  }
+}
+
+.skeleton_m {
+  height: 27px;
+  max-width: 70px;
+
+  @include adaptiv(tablet) {
+    height: 22px;
+    max-width: 50px;
+  }
+
+  @include adaptiv(mobile) {
+    height: 19px;
+    max-width: 35px;
+  }
+}
+
+.skeleton_l {
+  height: 36px;
+  max-width: 100px;
+
+  @include adaptiv(tablet) {
+    height: 27px;
+    max-width: 70px;
+  }
+
+  @include adaptiv(mobile) {
+    height: 22px;
+    max-width: 50px;
+  }
+}
+
+.skeleton_xl {
+  height: 48px;
+  max-width: 150px;
+
+  @include adaptiv(tablet) {
+    height: 36px;
+    max-width: 100px;
+  }
+
+  @include adaptiv(mobile) {
+    height: 27px;
+    max-width: 70px;
+  }
+}
+
+.text_line {
+  &,
+  & * {
+    line-height: normal;
+    gap: 4px;
+  }
+}
+
+.text_line_icon {
+  margin-right: 4px;
+}
+
+// ALIGN's
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

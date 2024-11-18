@@ -1,0 +1,132 @@
+.card {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 11px;
+  width: 100%;
+  height: 100%;
+}
+
+.container_link {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.referral_link_body {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--br-primary);
+  padding: 0 11px;
+  width: 100%;
+  height: 32px;
+}
+
+.referral_link {
+  display: flex;
+  flex-grow: 0;
+  border: 1px solid var(--acsent-color);
+  
+  @extend .referral_link_body;
+}
+
+.referral_link_skeleton {
+  max-width: 500px;
+
+  @extend .referral_link_body;
+}
+
+.referral_link_text {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  overflow: hidden;
+  font: var(--font-family-additional);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-main-s);
+  white-space: nowrap;
+  color: var(--acsent-color);
+}
+
+.copy_referral {
+  flex-grow: 1;
+  width: 37.03%;
+  min-width: 200px;
+
+  @media (max-width: 1200px) and (min-width: 1111px) {
+    min-width: 170px;
+  }
+
+  @media (max-width: 470px) {
+    min-width: 170px;
+  }
+}
+
+.conatiner_invitees {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  @media (max-width: 1200px) and (min-width: 1111px) {
+    margin-top: 27px;
+  }
+
+  @media (max-width: 470px) {
+    margin-top: 27px;
+  }
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statistic_title {
+  @media (max-width: 1200px) and (min-width: 1111px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 470px) {
+    font-size: 10px;
+  }
+}
+
+.statistic_count {
+  @media (max-width: 1200px) and (min-width: 1111px) {
+    font-size: var(--font-size-main-m);
+  }
+
+  @media (max-width: 470px) {
+    font-size: var(--font-size-main-m);
+  }
+}
+
+.link_organizations {
+  margin: 0 auto;
+  margin-top: 28px;
+
+  @media (max-width: 1200px) and (min-width: 1111px) {
+    margin-top: 24px;
+  }
+
+  @media (max-width: 470px) {
+    margin-top: 24px;
+  }
+}

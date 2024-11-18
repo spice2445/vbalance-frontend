@@ -1,0 +1,22 @@
+
+.agreeForm[class] {
+  font-size: 10px;
+  line-height: normal;
+}
+
+.second_line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.errorCheckbox[class] {
+  svg {
+    fill: var(--negative-color);
+  }
+}

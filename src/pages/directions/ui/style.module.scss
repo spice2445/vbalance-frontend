@@ -1,0 +1,23 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 67px;
+    width: 100%;
+    gap:40px;
+
+    @media(max-width: 740px) {
+        margin-bottom: 0;
+    }
+}
+
+.list_blocks {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
+    gap:32px;
+
+    @media(max-width: 1400px) {
+        justify-content: center;
+        grid-template-columns: auto;
+    }
+}

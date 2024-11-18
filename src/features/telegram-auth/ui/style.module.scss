@@ -1,0 +1,18 @@
+.method_telegram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--block-stoke-color);
+  width: 56px;
+  height: 56px;
+  background: var(--block-fill-color);
+  
+  & > svg {
+    fill: var(--acsent-color);
+  }
+
+  &:focus {
+    border-color: var(--block-stoke-color);
+    background: var(--block-fill-color);
+  }
+}
